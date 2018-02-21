@@ -22,6 +22,7 @@
     <IISExpressUseClassicPipelineMode />
     <TypeScriptToolsVersion>1.0</TypeScriptToolsVersion>
     <UseGlobalApplicationHostFile />
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -112,6 +113,7 @@
     <Content Include="Libs\jstree-styles\throbber.gif" />
     <Content Include="Libs\query-string.js" />
     <Content Include="Libs\webgl-utils.min.js" />
+    <Content Include="LucionTestViewer.html" />
     <Content Include="Plugins\NavigationCube\cube_fshader.c" />
     <Content Include="Plugins\NavigationCube\cube_vshader.c" />
     <Content Include="Plugins\NavigationCube\xbim-navigation-cube-shaders.debug.js" />
@@ -164,6 +166,12 @@
     <Content Include="Resources\doctemplate\static\5_Colourful_building.live.html" />
     <Content Include="tests\data\LakesideRestaurant.json" />
     <Content Include="tests\data\SampleHouse.wexbim" />
+    <Content Include="tests\data\30 Winchat Road.ifc" />
+    <Content Include="tests\data\30 Winchat Road.wexBIM" />
+    <Content Include="tests\data\34 Pellipar Gardens - 1st Floor.ifc" />
+    <Content Include="tests\data\34 Pellipar Gardens - 1st Floor.wexBIM" />
+    <Content Include="tests\data\34 Pellipar Gardens - Ground Floor.ifc" />
+    <Content Include="tests\data\34 Pellipar Gardens - Ground Floor.wexBIM" />
     <None Include="Tutorials\1_Hello_building.md" />
     <Content Include="Resources\doctemplate\static\scripts\xbim-viewer.debug.bundle.js" />
     <Content Include="simpleviewer.html" />

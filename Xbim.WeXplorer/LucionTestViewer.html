@@ -25,16 +25,31 @@
     <script type="text/javascript">
         var viewer = new xViewer('xBim-Viewer');
 
+        var data = [];
+
         //  call function to create maps[] array that points to asbestos items.
         viewer.on('loaded', function () {
             var productIDs = viewer.getProductID(xProductType.IFCBUILDINGELEMENTPROXY);
 
-            //  ..now colour
-            if (productIDs != null) {
-                var R1 = [255, 0, 0, 255];
-                viewer.defineStyle(4, R1);
-                viewer.setState(xState.UNDEFINED, [productIDs[1]]);
-                viewer.setStyle(4, [productIDs[1]]);
+            for (var i = 0; i < productIDs.length; i++) {
+                var id = productIDs[i];
+
+                var item = {
+                    id: {
+                        'name': 'lol',
+                        'sampleId':''
+                    }
+                };
+
+                data.push(item);
+            }
+        });
+
+        viewer.on('pick', function (args) {
+            var id = args.id;
+            var span = document.getElementById('productId');
+            if (span) {
+                span.innerHTML = data[id]['name'];
             };
         });
 

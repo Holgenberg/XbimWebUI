@@ -18,15 +18,24 @@
 
 </head>
 <body style="">
+    <div id="info">
+        <div id="productId">&nbsp</div>
+    </div>
     <canvas id="xBim-Viewer" width="750" height="450"></canvas>
     <script type="text/javascript">
         var viewer = new xViewer('xBim-Viewer');
 
         //  call function to create maps[] array that points to asbestos items.
         viewer.on('loaded', function () {
-            viewer.setState(xState.UNDEFINED, xProductType.IFCBUILDINGELEMENTPROXY);
+            var productIDs = viewer.getProductID(xProductType.IFCBUILDINGELEMENTPROXY);
 
-            //  ... now colour
+            //  ..now colour
+            if (productIDs != null) {
+                var R1 = [255, 0, 0, 255];
+                viewer.defineStyle(4, R1);
+                viewer.setState(xState.UNDEFINED, [productIDs[1]]);
+                viewer.setStyle(4, [productIDs[1]]);
+            };
         });
 
         viewer.load('tests/data/42 Floathaven Close.wexBIM');

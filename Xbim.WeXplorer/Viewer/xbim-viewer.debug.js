@@ -349,7 +349,16 @@ xViewer.prototype.defineStyle = function (index, colour) {
     }, this);
 };
 
-    
+xViewer.prototype.getProductID = function (target) {
+    var productID = null;
+    this._handles.forEach(function (handle) {
+        productID = handle.getProductID(target);
+        if (productID !== null) {
+            return;
+        }
+    }, this);
+    return productID;
+}
 
 /**
 * You can use this function to change state of products in the model. State has to have one of values from {@link xState xState} enumeration. 

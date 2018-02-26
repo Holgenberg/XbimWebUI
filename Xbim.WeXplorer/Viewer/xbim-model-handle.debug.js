@@ -334,16 +334,40 @@ xModelHandle.prototype.getStyle = function (id) {
     return this._model.states[span[0] * 2 + 1];
 }
 
+xModelHandle.prototype.getProductID = function (args) {
+    if (typeof (args) == 'undefined') throw 'You have to specify products as an array of product IDs or as a product type ID';
+
+    //  get productIDs from function
+    var productIDs = [];
+
+    if (typeof (args) == 'number') {
+        for (var n in this._model.productMap) {
+            var map = this._model.productMap[n];
+            if (map.type == args) {
+                productIDs.push(n);
+            }
+        }
+    }
+
+    return productIDs;
+};
+
 xModelHandle.prototype.setState = function (state, args) {
     if (typeof (state) != 'number' && state < 0 && state > 255) throw 'You have to specify state as an ID of state or index in style pallete.';
     if (typeof (args) == 'undefined') throw 'You have to specify products as an array of product IDs or as a product type ID';
+
+    //get productIDs from function
+    var productIDs = [];
 
     var maps = [];
     //it is type
     if (typeof (args) == 'number') {
         for (var n in this._model.productMap) {
             var map = this._model.productMap[n];
-            if (map.type == args) maps.push(map);
+            if (map.type == args) {
+                maps.push(map);
+                productIDs.push(n);
+            }
         }
     }
         //it is a list of IDs

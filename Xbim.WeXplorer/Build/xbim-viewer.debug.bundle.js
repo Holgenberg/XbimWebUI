@@ -716,6 +716,10 @@ xModelHandle.prototype._bufferTexture = function (pointer, data, arity) {
         size = Math.ceil(dim);
     }
 
+    //  hack for finding id
+        
+    //  hack for finding id
+
     if (size == 0) return 0;
     if (size > maxSize) throw 'Too much data! It cannot fit into the texture.';
 

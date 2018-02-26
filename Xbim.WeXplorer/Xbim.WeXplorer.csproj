@@ -113,7 +113,6 @@
     <Content Include="Libs\jstree-styles\throbber.gif" />
     <Content Include="Libs\query-string.js" />
     <Content Include="Libs\webgl-utils.min.js" />
-    <Content Include="LucionTestViewer.html" />
     <Content Include="Plugins\NavigationCube\cube_fshader.c" />
     <Content Include="Plugins\NavigationCube\cube_vshader.c" />
     <Content Include="Plugins\NavigationCube\xbim-navigation-cube-shaders.debug.js" />
@@ -172,12 +171,17 @@
     <Content Include="tests\data\34 Pellipar Gardens - 1st Floor.wexBIM" />
     <Content Include="tests\data\34 Pellipar Gardens - Ground Floor.ifc" />
     <Content Include="tests\data\34 Pellipar Gardens - Ground Floor.wexBIM" />
+    <Content Include="tests\data\12704 - Zoopla.ifc" />
+    <Content Include="tests\data\12704 - Zoopla.wexBIM" />
+    <Content Include="tests\data\42 Floathaven Close.ifc" />
+    <Content Include="tests\data\42 Floathaven Close.wexBIM" />
     <None Include="Tutorials\1_Hello_building.md" />
     <Content Include="Resources\doctemplate\static\scripts\xbim-viewer.debug.bundle.js" />
     <Content Include="simpleviewer.html" />
     <Content Include="Viewer\fragment_shader.c" />
     <Content Include="Build\gl-matrix.min.js" />
     <Content Include="Libs\gl-matrix.js" />
+    <Content Include="LucionTestViewer.html" />
     <Content Include="Viewer\xbim-product-inheritance.debug.js" />
     <Content Include="Viewer\vertex_shader.c" />
     <Content Include="Viewer\vertex_shader_noFPT.c" />

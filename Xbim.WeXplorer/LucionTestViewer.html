@@ -1,8 +1,8 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Lucion Test Viewer</title>
-    <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
 
     <script src="Libs/gl-matrix.js"></script>
     <script src="Libs/webgl-utils.js"></script>
@@ -15,25 +15,23 @@
     <script type="text/javascript" src="Viewer/xbim-triangulated-shape.debug.js"></script>
     <script type="text/javascript" src="Viewer/xbim-viewer.debug.js"></script>
     <script src="Libs/jquery.js"></script>
+
 </head>
-<body>
-    <div id="info">
-        <div id="productId">&nbsp</div>
-    </div>
+<body style="">
     <canvas id="xBim-Viewer" width="750" height="450"></canvas>
     <script type="text/javascript">
-        var viewer = new xViewer('xBim-Viewer');       
+        var viewer = new xViewer('xBim-Viewer');
 
-        viewer.on('pick', function (args) {
-            var id = args.id;
-            var span = document.getElementById('productId');
-            if (span) {
-                span.innerHTML = id;
-            }
-        })
+        //  call function to create maps[] array that points to asbestos items.
+        viewer.on('loaded', function () {
+            viewer.setState(xState.UNDEFINED, xProductType.IFCBUILDINGELEMENTPROXY);
 
-        viewer.load('tests/data/34 Pellipar Gardens - 1st Floor.wexbim');
+            //  ... now colour
+        });
+
+        viewer.load('tests/data/42 Floathaven Close.wexBIM');
         viewer.start();
     </script>
+
 </body>
 </html>

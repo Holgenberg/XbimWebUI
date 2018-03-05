@@ -81,6 +81,36 @@
                     };
 
                 idReferences.push(idReference);
+
+                //  NexGen Colour Scheme
+                var riskLevel;
+
+                switch (json[i]["Risk Level"]) {
+                    default:
+                        riskLevel = [13, 77, 148, 255];
+                        break;
+                    case "NAD":
+                        riskLevel = [0, 0, 0, 51];
+                        break;
+                    case "Presume":
+                        riskLevel = [194, 112, 77, 255];
+                        break;
+                    case "Limited Access":
+                        riskLevel = [161, 0, 180, 255];
+                        break;
+                    case "R3":
+                        riskLevel = [250, 213, 0, 255];
+                        break;
+                    case "R2":
+                        riskLevel = [255, 123, 0, 255];
+                        break;
+                    case "R1":
+                        riskLevel = [255, 0, 0, 255];
+                        break;
+                }
+
+                viewer.defineStyle(7, riskLevel);
+                viewer.setStyle(7, [id]);
             }
         });
 

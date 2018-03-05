@@ -175,6 +175,7 @@
     <Content Include="tests\data\12704 - Zoopla.wexBIM" />
     <Content Include="tests\data\42 Floathaven Close.ifc" />
     <Content Include="tests\data\42 Floathaven Close.wexBIM" />
+    <Content Include="NexGenExample.json" />
     <None Include="Tutorials\1_Hello_building.md" />
     <Content Include="Resources\doctemplate\static\scripts\xbim-viewer.debug.bundle.js" />
     <Content Include="simpleviewer.html" />

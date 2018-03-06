@@ -50,8 +50,8 @@
 
         //  TODO Load CSVJSON with starting external then internal OR edit IntegrationSpace to create external items last. 
         var obj = $.getJSON("NexGenExample.json", function (data) {
-            for (var i = 0; i < obj.responseJSON.length; i++) {
-                json.push(obj.responseJSON[i]);
+            for (var i = 0; i < obj.responseJSON["data"].length; i++) {
+                json.push(obj.responseJSON["data"][i]);
             }
         });        
 
@@ -85,7 +85,7 @@
                 //  NexGen Colour Scheme
                 var riskLevel;
 
-                switch (json[i]["Risk Level"]) {
+                switch (idReference["Risk Level"]) {
                     default:
                         riskLevel = [13, 77, 148, 255];
                         break;
@@ -109,8 +109,10 @@
                         break;
                 }
 
-                viewer.defineStyle(7, riskLevel);
-                viewer.setStyle(7, [id]);
+                viewer.defineStyle(i, riskLevel);
+
+                //  Fix colouring by Array
+                viewer.setStyle(i, [id]);
             }
         });
 
@@ -128,6 +130,7 @@
             var initialControlRecommendationHTML = document.getElementById('Initial Control Recommendation');
 
             //  Populate inner HTML
+            buildingHTML.innerHTML = search(id, idReferences, 'Building');
             levelHTML.innerHTML = search(id, idReferences, 'Level');
             locationHTML.innerHTML = search(id, idReferences, 'Location');
             itemHTML.innerHTML = search(id, idReferences, 'Item');
@@ -145,7 +148,7 @@
             }
         }        
 
-        viewer.load('tests/data/42 Floathaven Close.wexBIM');
+        viewer.load('tests/data/30 Winchat Road.wexBIM');
         viewer.start();
     </script>
 

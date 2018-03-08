@@ -4,6 +4,21 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Lucion Test Viewer</title>
 
+    <style type="text/css">
+
+        /* Hide... */
+        .hidden {
+            display: none !important;
+            visibility: hidden !important;
+        }
+
+        div {
+            border: solid;
+            width: 320px;
+        }
+
+    </style>
+
     <script src="Libs/gl-matrix.js"></script>
     <script src="Libs/webgl-utils.js"></script>
     <script type="text/javascript" src="Viewer/xbim-product-type.debug.js"></script>
@@ -18,42 +33,19 @@
 
 </head>
 <body style="">
-    <div id="info">
-        <div >
-             Building: <span id="Building"></span>
-        </div>
-        <div>
-            Level: <span id="Level"></span>
-        </div>
-        <div>
-            Location: <span id="Location"></span>
-        </div>
-        <div>
-            Item: <span id="Item"></span>
-        </div>
-        <div>
-            Material Description: <span id="Material Description"></span>
-        </div>
-        <div>
-            Risk Level: <span id="Risk Level"></span>
-        </div>
-        <div> 
-            Initial Control Recommendation: <span id="Initial Control Recommendation"></span>
-        </div>
-    </div>
     <canvas id="xBim-Viewer" width="750" height="450"></canvas>
     <script type="text/javascript">
-        var viewer = new xViewer('xBim-Viewer');        
+        var viewer = new xViewer('xBim-Viewer');
 
         var jobName = 'Vance Unit 2-3';
 
         //  Create .json
         var json = [];
 
-        //  TODO Load CSVJSON with starting external then internal OR edit IntegrationSpace to create external items last. 
+        //  TODO Load CSVJSON with starting external then internal OR edit IntegrationSpace to create external items last.
         $.getJSON("NexGenExample.json", function (data) {
             json = data["data"];
-        });    
+        });
 
         //  Array for Asbestos Samples in Building.
         var idReferences = [];
@@ -70,7 +62,7 @@
 
                 //  Assumed that # of asi items in WexBim match # of NexGen CSV Items.
                 var idReference = {
-                    'id': id,                    
+                    'id': id,
                     'Building': json[i]["Building"],
                     'Level': json[i]["Level"],
                     'Location': json[i]["Location"],
@@ -78,7 +70,7 @@
                     'Material Description': json[i]["Material Description"],
                     'Risk Level': json[i]["Risk Level"],
                     'Initial Control Recommendation': json[i]["Tentative Recommend"]
-                    };
+                };
 
                 idReferences.push(idReference);
 
@@ -120,7 +112,6 @@
         viewer.on('pick', function (args) {
             var id = args.id;
 
-            //  Get HTML Elements
             var buildingHTML = document.getElementById('Building');
             var levelHTML = document.getElementById('Level');
             var locationHTML = document.getElementById('Location');
@@ -137,7 +128,17 @@
             materialDescriptionHTML.innerHTML = search(id, idReferences, 'Material Description');
             riskLevelHTML.innerHTML = search(id, idReferences, 'Risk Level');
             initialControlRecommendationHTML.innerHTML = search(id, idReferences, 'Initial Control Recommendation');
-         });
+
+            if (buildingHTML.innerHTML != "undefined" && levelHTML.innerHTML != "undefined" && locationHTML != "undefined" &&
+                itemHTML.innerHTML != "undefined" && materialDescriptionHTML.innerHTML != "undefined" && riskLevelHTML.innerHTML != "undefined"
+                && initialControlRecommendationHTML.innerHTML != "undefined") {
+                $('#info').removeClass('hidden');
+            }
+
+            else {
+                $('#info').addClass('hidden');
+            }
+        });
 
         //  Function to retrieve data from array.
         function search(IDKey, myArray, sampleInfo) {
@@ -146,11 +147,34 @@
                     return myArray[i][sampleInfo];
                 }
             }
-        }        
+        }
 
         viewer.load('tests/data/' + jobName + '.wexBIM');
         viewer.start();
     </script>
 
+    <div id="info" class="hidden">
+        <div>
+            Building: <span id="Building"></span>
+        </div>
+        <div>
+            Level: <span id="Level"></span>
+        </div>
+        <div>
+            Location: <span id="Location"></span>
+        </div>
+        <div>
+            Item: <span id="Item"></span>
+        </div>
+        <div>
+            Material Description: <span id="Material Description"></span>
+        </div>
+        <div>
+            Risk Level: <span id="Risk Level"></span>
+        </div>
+        <div>
+            Initial Control Recommendation: <span id="Initial Control Recommendation"></span>
+        </div>
+    </div>
 </body>
 </html>

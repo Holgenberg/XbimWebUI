@@ -45,15 +45,15 @@
     <script type="text/javascript">
         var viewer = new xViewer('xBim-Viewer');        
 
+        var jobName = 'Vance Unit 2-3';
+
         //  Create .json
         var json = [];
 
         //  TODO Load CSVJSON with starting external then internal OR edit IntegrationSpace to create external items last. 
-        var obj = $.getJSON("NexGenExample.json", function (data) {
-            for (var i = 0; i < obj.responseJSON["data"].length; i++) {
-                json.push(obj.responseJSON["data"][i]);
-            }
-        });        
+        $.getJSON("NexGenExample.json", function (data) {
+            json = data["data"];
+        });    
 
         //  Array for Asbestos Samples in Building.
         var idReferences = [];
@@ -148,7 +148,8 @@
             }
         }        
 
-        viewer.load('tests/data/30 Winchat Road.wexBIM');
+        //viewer.load('tests/data/' + jobName + '.wexBIM');
+        viewer.load('Vance Unit 2-3 .wexBIM');
         viewer.start();
     </script>
 

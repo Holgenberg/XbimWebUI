@@ -183,20 +183,19 @@
     <Content Include="tests\data\LakesideRestaurant.json" />
     <Content Include="tests\data\SampleHouse.wexbim" />
     <Content Include="tests\data\30 Winchat Road.ifc" />
-    <Content Include="tests\data\30 Winchat Road.wexBIM" />
     <Content Include="tests\data\34 Pellipar Gardens - 1st Floor.ifc" />
     <Content Include="tests\data\34 Pellipar Gardens - 1st Floor.wexBIM" />
     <Content Include="tests\data\34 Pellipar Gardens - Ground Floor.ifc" />
     <Content Include="tests\data\34 Pellipar Gardens - Ground Floor.wexBIM" />
     <Content Include="tests\data\12704 - Zoopla.ifc" />
-    <Content Include="tests\data\12704 - Zoopla.wexBIM" />
     <Content Include="tests\data\42 Floathaven Close.ifc" />
-    <Content Include="tests\data\42 Floathaven Close.wexBIM" />
     <Content Include="NexGenExample.json" />
     <None Include="packages.config" />
-    <Content Include="tests\data\Vance Unit 2-3 .wexBIM">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+    <Content Include="tests\data\12704 - Zoopla.wexBIM" />
+    <Content Include="tests\data\30 Winchat Road.wexBIM" />
+    <Content Include="tests\data\42 Floathaven Close.wexBIM" />
+    <Content Include="tests\data\Vance Unit 2-3 .wexBIM" />
+    <Content Include="tests\data\Sample plan.wexBIM" />
     <None Include="Tutorials\1_Hello_building.md" />
     <Content Include="Resources\doctemplate\static\scripts\xbim-viewer.debug.bundle.js" />
     <Content Include="simpleviewer.html" />

@@ -12,9 +12,8 @@
             visibility: hidden !important;
         }
 
-        div {
+        table {
             border: solid;
-            width: 320px;
         }
 
     </style>
@@ -37,7 +36,7 @@
     <script type="text/javascript">
         var viewer = new xViewer('xBim-Viewer');
 
-        var jobName = 'Vance Unit 2-3';
+        var jobName = 'Sample plan';
 
         //  Create .json
         var json = [];
@@ -153,28 +152,28 @@
         viewer.start();
     </script>
 
-    <div id="info" class="hidden">
-        <div>
-            Building: <span id="Building"></span>
-        </div>
-        <div>
-            Level: <span id="Level"></span>
-        </div>
-        <div>
-            Location: <span id="Location"></span>
-        </div>
-        <div>
-            Item: <span id="Item"></span>
-        </div>
-        <div>
-            Material Description: <span id="Material Description"></span>
-        </div>
-        <div>
-            Risk Level: <span id="Risk Level"></span>
-        </div>
-        <div>
-            Initial Control Recommendation: <span id="Initial Control Recommendation"></span>
-        </div>
-    </div>
+    <table id="info" class="hidden">
+        <tr>
+            <th>Building: </th><td id="Building"></td>
+        </tr>
+        <tr>
+            <th>Level: </th><td id="Level"></td>
+        </tr>
+        <tr>
+            <th>Location: </th><td id="Location"></td>
+        </tr>
+        <tr>
+            <th>Item: </th><td id="Item"></td>
+        </tr>
+        <tr>
+            <th>Material Description: </th><td id="Material Description"></td>
+        </tr>
+        <tr>
+            <th>Risk Level: </th><td id="Risk Level"></td>
+        </tr>
+        <tr>
+            <th>Initial Control Recommendation: </th><td id="Initial Control Recommendation"></td>
+        </tr>
+    </table>
 </body>
 </html>

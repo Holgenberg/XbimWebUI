@@ -36,7 +36,7 @@
     <script type="text/javascript">
         var viewer = new xViewer('xBim-Viewer');
 
-        var jobName = 'Sample plan';
+        var jobName = '12704 - Snow';
 
         //  Create .json
         var json = [];
@@ -55,6 +55,7 @@
 
             //  Function created to retrieve an array of WexBIM Element ID's.
             var productIDs = viewer.getProductID(xProductType.IFCBUILDINGELEMENTPROXY);
+            console.log(productIDs);
 
             for (var i = 0; i < productIDs.length; i++) {
                 var id = productIDs[i];
